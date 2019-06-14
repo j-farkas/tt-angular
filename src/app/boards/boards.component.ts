@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../game';
 import { GAME } from '../current-game';
+import {CARDS} from '.././card-list';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class BoardsComponent implements OnInit {
   }
 
 drop_handler(location: number){
-  console.log("You did it!");
+  GAME.selected = location;
+  console.log("You did it");
 }
 }

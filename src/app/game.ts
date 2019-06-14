@@ -17,9 +17,9 @@ dragged: number;
     this.turn = 0,
     this.currentID = 1,
     this.board =
-     [0,1,2
-     ,3,4,5
-     ,6,7,8],
+     [0,0,0
+     ,0,0,0
+     ,0,0,0],
     this.selected = 0;
     //this.suddenDeathMode = false;
   }

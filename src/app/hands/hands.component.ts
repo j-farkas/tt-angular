@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../game';
 import { GAME } from '../current-game';
+import {CARDS} from '.././card-list';
 
 
 
@@ -21,6 +22,10 @@ export class HandsComponent implements OnInit {
   drag_handler(id: number){
     GAME.dragged = id;
     console.log(GAME);
+  }
+
+  drag_end(){
+    GAME.board[GAME.selected-1] = GAME.dragged;
   }
 
 }
