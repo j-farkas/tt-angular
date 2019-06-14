@@ -27,7 +27,7 @@ export class HandsComponent implements OnInit {
       GAME.board[GAME.selected-1] = GAME.dragged;
       GAME.turn++;
       this.hand = this.hand.filter((x) => x.id != GAME.dragged.id);
-      let checkFlip = GAME.findNeighbors(GAME.selected);
+      GAME.flipIt(GAME.selected);
     }
 
   }

@@ -58,21 +58,31 @@ dealToPlayers() {
 }
 
   findNeighbors(location: number){
-    let neighbors = [location-1, location+1, location+3, location-3]
+    console.log(this.board);
+    let neighbors = {left: this.board[location-2], right: this.board[location], up: this.board[location-4], down: this.board[location+2]}
     if(location <= 3){
-      neighbors = neighbors.filter((x)=> x != location - 3);
+      neighbors.up = new Card(0,0,0,0,0);
     }
     if(location >= 7){
-      neighbors = neighbors.filter((x)=> x != location + 3);
+      neighbors.down = new Card(0,0,0,0,0);
     }
     if(location % 3 === 1){
-      neighbors = neighbors.filter((x)=> x != location - 1);
+      neighbors.left = new Card(0,0,0,0,0);
     }
     if(location % 3 === 0){
-      neighbors = neighbors.filter((x)=> x != location + 1);
+      neighbors.right = new Card(0,0,0,0,0);
     }
     console.log(neighbors);
     return neighbors;
+  }
 
+  flipIt(location: number){
+    let neighbors = this.findNeighbors(location);
+    if(neighbors.down.up > 0 && this.board[location-1].down > neighbors.down.up){
+        neighbors.down.owner = this.board[location-1].owner;
+        console.log(this.board[location].image.split("_"));
+        neighbors.down.image = neighbors.down.image.split("_")[0] + "_" + this.board[location-1].image.split("_")[1];
+
+    }
   }
 }
