@@ -1,22 +1,50 @@
+import {CARDS} from './card-list';
+import {Card} from './card';
+
 export class Game{
-deck: {}[];
-player1: {active};
-player2: {active};
+deck: Card[];
+player1: {active: boolean, hand: Card[]};
+player2: {active: boolean, hand: Card[]};
 turn: number;
 currentID: number;
-board: number[];
+board: {}[];
 selected: boolean;
     constructor(){
-    this.deck = [],
-    this.player1 = {active: true},
-    this.player2 = {active: false},
+    this.deck = CARDS.slice(),
+    this.player1 = {active: true , hand: []},
+    this.player2 = {active: false, hand: []},
     this.turn = 0,
     this.currentID = 1,
     this.board =
-     [0,1,2,
-      3,4,5
-      ,6,7,8],
+     [0,1,2
+     ,3,4,5
+     ,6,7,8],
     this.selected = false;
     //this.suddenDeathMode = false;
   }
+
+  shuffle() {
+  let i = 0;
+  let j = 0;
+  let temp = null;
+  for (i = this.deck.length - 1; i > 0; i -= 1) {
+    j = Math.floor(Math.random() * (i + 1));
+    temp = this.deck[i];
+    this.deck[i] = this.deck[j];
+    this.deck[j] = temp;
+  }
+}
+
+dealToPlayers() {
+  this.shuffle();
+  for(var i = 0; i < 10; i ++){
+    if(i%2 ===1){
+      this.deck[i].owner = "blue";
+      this.player1.hand.push(this.deck[i]);
+    }else{
+      this.deck[i].owner = "red";
+      this.player2.hand.push(this.deck[i]);
+    }
+  }
+}
 }
