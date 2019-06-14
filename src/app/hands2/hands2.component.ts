@@ -15,7 +15,6 @@ export class Hands2Component implements OnInit {
 
   ngOnInit() {
     this.hand = GAME.player2.hand;
-
   }
 
   drag_handler(id: number){
@@ -28,9 +27,7 @@ export class Hands2Component implements OnInit {
       GAME.board[GAME.selected-1] = GAME.dragged;
       GAME.turn++;
       this.hand = this.hand.filter((x) => x.id != GAME.dragged.id);
-      //GAME.findNeighbors(game.selected);
-        }
-
+      let checkFlip = GAME.findNeighbors(GAME.selected);
+    }
   }
-
 }

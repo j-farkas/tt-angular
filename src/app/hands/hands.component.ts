@@ -4,8 +4,6 @@ import { Card } from '../card';
 import { GAME } from '../current-game';
 import { CARDS } from '.././card-list';
 
-
-
 @Component({
   selector: 'app-hands',
   templateUrl: './hands.component.html',
@@ -17,7 +15,6 @@ export class HandsComponent implements OnInit {
 
   ngOnInit() {
     this.hand = GAME.player1.hand;
-
   }
 
   drag_handler(id: number){
@@ -30,8 +27,8 @@ export class HandsComponent implements OnInit {
       GAME.board[GAME.selected-1] = GAME.dragged;
       GAME.turn++;
       this.hand = this.hand.filter((x) => x.id != GAME.dragged.id);
-      //GAME.findNeighbors(game.selected);
-        }
+      let checkFlip = GAME.findNeighbors(GAME.selected);
+    }
 
   }
 

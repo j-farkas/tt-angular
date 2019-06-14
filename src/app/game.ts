@@ -57,10 +57,22 @@ dealToPlayers() {
   }
 }
 
-findNeighbors(location: number){
-  let neighbors = [location-1, location+1, location+3, location-3]
+  findNeighbors(location: number){
+    let neighbors = [location-1, location+1, location+3, location-3]
+    if(location <= 3){
+      neighbors = neighbors.filter((x)=> x != location - 3);
+    }
+    if(location >= 7){
+      neighbors = neighbors.filter((x)=> x != location + 3);
+    }
+    if(location % 3 === 1){
+      neighbors = neighbors.filter((x)=> x != location - 1);
+    }
+    if(location % 3 === 0){
+      neighbors = neighbors.filter((x)=> x != location + 1);
+    }
+    console.log(neighbors);
+    return neighbors;
 
-  return neighbors;
-
-}
+  }
 }
