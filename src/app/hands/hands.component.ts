@@ -18,4 +18,9 @@ export class HandsComponent implements OnInit {
 
   }
 
+  drag_handler(id: number){
+    GAME.dragged = id;
+    console.log(GAME);
+  }
+
 }

@@ -8,7 +8,8 @@ player2: {active: boolean, hand: Card[]};
 turn: number;
 currentID: number;
 board: {}[];
-selected: boolean;
+selected: number;
+dragged: number;
     constructor(){
     this.deck = CARDS.slice(),
     this.player1 = {active: true , hand: []},
@@ -19,7 +20,7 @@ selected: boolean;
      [0,1,2
      ,3,4,5
      ,6,7,8],
-    this.selected = false;
+    this.selected = 0;
     //this.suddenDeathMode = false;
   }
 

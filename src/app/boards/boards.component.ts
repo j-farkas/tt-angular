@@ -15,7 +15,7 @@ export class BoardsComponent implements OnInit {
     GAME.dealToPlayers();
   }
 
-drop_handler(){
+drop_handler(location: number){
   console.log("You did it!");
 }
 }
