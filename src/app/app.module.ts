@@ -3,11 +3,19 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { HandsComponent } from './hands/hands.component';
+import { BoardsComponent } from './boards/boards.component';
+import { ScoreComponent } from './score/score.component';
+import { OptionsComponent } from './options/options.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HandsComponent,
+    BoardsComponent,
+    ScoreComponent,
+    OptionsComponent
   ],
   imports: [
     BrowserModule
