@@ -28,7 +28,6 @@ export class HandsComponent implements OnInit {
     if(GAME.board[GAME.selected-1] === 0 && GAME.turn % 2 === 0){
       GAME.board[GAME.selected-1] = GAME.dragged;
       GAME.turn++;
-      //console.log(parseInt(GAME.dragged.split("/")[2].split("_")[0]));
       this.hand = this.hand.filter((x) => x.image != GAME.dragged);
         }
 

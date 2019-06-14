@@ -9,14 +9,14 @@ import {CARDS} from '.././card-list';
   styleUrls: ['./hands2.component.css']
 })
 export class Hands2Component implements OnInit {
-hand: {}[];
+hand: {image}[];
   constructor() { }
 
   ngOnInit() {
     this.hand = GAME.player2.hand;
   }
 
-  drag_handler(id: number){
+  drag_handler(id: string){
     GAME.dragged = id;
     console.log(GAME);
   }
