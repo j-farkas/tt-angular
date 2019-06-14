@@ -1,6 +1,6 @@
 import { Card } from './card';
 
-export const CARDS: Card[] = [
+export let CARDS: Card[] = [
   new Card(9,7,3,6,1),
   new Card(9,8,4,4,2),
   new Card(4,8,9,4,3),
