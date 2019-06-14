@@ -25,6 +25,7 @@ hand: {}[];
     if(GAME.board[GAME.selected-1] === 0 && GAME.turn % 2 === 1){
       GAME.board[GAME.selected-1] = GAME.dragged;
       GAME.turn++;
+      this.hand = this.hand.filter((x) => x.image != GAME.dragged);
     }
   }
 
