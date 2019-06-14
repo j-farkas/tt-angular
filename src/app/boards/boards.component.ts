@@ -10,14 +10,19 @@ import {CARDS} from '.././card-list';
   styleUrls: ['./boards.component.css']
 })
 export class BoardsComponent implements OnInit {
+  board: string[];
+  game: Game;
   constructor() { }
 
   ngOnInit() {
+    this.board = ["","",""
+                 ,"","",""
+                  ,"","",""];
+    this.game = GAME;
     GAME.dealToPlayers();
   }
 
 drop_handler(location: number){
   GAME.selected = location;
-  console.log("You did it");
 }
 }
