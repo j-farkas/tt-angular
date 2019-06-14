@@ -11,7 +11,7 @@ import { CARDS } from '.././card-list';
   styleUrls: ['./hands.component.css']
 })
 export class HandsComponent implements OnInit {
-  hand: {}[];
+  hand: {image}[];
   constructor() { }
 
   ngOnInit() {
@@ -19,13 +19,19 @@ export class HandsComponent implements OnInit {
 
   }
 
-  drag_handler(id: number){
+  drag_handler(id: string){
     GAME.dragged = id;
     console.log(GAME);
   }
 
   drag_end(){
-    GAME.board[GAME.selected-1] = GAME.dragged;
+    if(GAME.board[GAME.selected-1] === 0 && GAME.turn % 2 === 0){
+      GAME.board[GAME.selected-1] = GAME.dragged;
+      GAME.turn++;
+      //console.log(parseInt(GAME.dragged.split("/")[2].split("_")[0]));
+      this.hand = this.hand.filter((x) => x.image != GAME.dragged);
+        }
+
   }
 
 }

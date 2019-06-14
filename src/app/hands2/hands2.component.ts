@@ -16,4 +16,16 @@ hand: {}[];
     this.hand = GAME.player2.hand;
   }
 
+  drag_handler(id: number){
+    GAME.dragged = id;
+    console.log(GAME);
+  }
+
+  drag_end(){
+    if(GAME.board[GAME.selected-1] === 0 && GAME.turn % 2 === 1){
+      GAME.board[GAME.selected-1] = GAME.dragged;
+      GAME.turn++;
+    }
+  }
+
 }
