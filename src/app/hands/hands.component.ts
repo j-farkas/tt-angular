@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Game } from '../game';
+import { GAME } from '../current-game';
 
 
 
@@ -8,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hands.component.css']
 })
 export class HandsComponent implements OnInit {
+  hand: {}[];
   constructor() { }
 
   ngOnInit() {
+    this.hand = GAME.player1.hand;
+
   }
 
 }

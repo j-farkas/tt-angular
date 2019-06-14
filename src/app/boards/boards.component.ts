@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../game';
+import { GAME } from '../current-game';
+
 
 @Component({
   selector: 'app-boards',
@@ -7,13 +9,10 @@ import { Game } from '../game';
   styleUrls: ['./boards.component.css']
 })
 export class BoardsComponent implements OnInit {
-game: Game;
   constructor() { }
 
   ngOnInit() {
-    this.game = new Game();
-    this.game.dealToPlayers();
-    console.log(this.game);
+    GAME.dealToPlayers();
   }
 
 }

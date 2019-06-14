@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Game } from '../game';
+import { GAME } from '../current-game';
 
 @Component({
   selector: 'app-hands2',
