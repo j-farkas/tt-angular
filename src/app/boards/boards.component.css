@@ -1,8 +1,16 @@
 .grid-container {
   display: inline-grid;
   grid-template-columns: repeat(3, 5fr);
-  background-image: url(../../assets/board.png);
-  background-size: cover;
-  height:837px;
+  /* background-image: url(../../assets/board.png); */
+  height:672px;
   width:654px;
+  border-left: solid black 2px;
+  border-bottom: solid black 2px;
+}
+
+.grid-item{
+  height:222px;
+  width: 216px;
+  border-top: solid black 2px;
+  border-right: solid black 2px;
 }
