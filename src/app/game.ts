@@ -40,9 +40,11 @@ dealToPlayers() {
   for(var i = 0; i < 10; i ++){
     if(i%2 ===1){
       this.deck[i].owner = "blue";
+      this.deck[i].image = "../assets/"+this.deck[i].id+"_b.png";
       this.player1.hand.push(this.deck[i]);
     }else{
       this.deck[i].owner = "red";
+      this.deck[i].image = "../assets/"+this.deck[i].id+"_r.png";
       this.player2.hand.push(this.deck[i]);
     }
   }

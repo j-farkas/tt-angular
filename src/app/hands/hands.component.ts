@@ -7,13 +7,13 @@ import { Game } from '../game';
   styleUrls: ['./hands.component.css']
 })
 export class HandsComponent implements OnInit {
-
+game: Game;
   constructor() { }
 
   ngOnInit() {
-    let game = new Game();
-    game.dealToPlayers();
-    console.log(game);
+    this.game = new Game();
+    this.game.dealToPlayers();
+    console.log(this.game);
   }
 
 }

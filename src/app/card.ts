@@ -5,6 +5,7 @@ export class Card{
   right:number;
   id:number;
   owner:string;
+  image:string;
 
   constructor(top, bottom, left, right, id){
     this.up = top,
@@ -13,5 +14,6 @@ export class Card{
     this.right = right
     this.id = id;
     this.owner = "";
+    this.image = "";
   }
 }
