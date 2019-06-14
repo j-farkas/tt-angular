@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../game';
+import { Card } from '../card';
 import { GAME } from '../current-game';
 import {CARDS} from '.././card-list';
 
@@ -10,14 +11,14 @@ import {CARDS} from '.././card-list';
   styleUrls: ['./boards.component.css']
 })
 export class BoardsComponent implements OnInit {
-  board: string[];
+  board: Card[];
   game: Game;
   constructor() { }
 
   ngOnInit() {
-    this.board = ["","",""
-                 ,"","",""
-                  ,"","",""];
+    this.board = [new Card(0,0,0,0,0),new Card(0,0,0,0,0),new Card(0,0,0,0,0)
+                  ,new Card(0,0,0,0,0),new Card(0,0,0,0,0),new Card(0,0,0,0,0)
+                ,new Card(0,0,0,0,0),new Card(0,0,0,0,0),new Card(0,0,0,0,0)];
     this.game = GAME;
     GAME.dealToPlayers();
   }

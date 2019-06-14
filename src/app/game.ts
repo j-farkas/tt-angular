@@ -7,9 +7,9 @@ player1: {active: boolean, hand: Card[]};
 player2: {active: boolean, hand: Card[]};
 turn: number;
 currentID: number;
-board: {}[];
+board: Card[];
 selected: number;
-dragged: string;
+dragged: Card;
     constructor(){
     this.deck = CARDS.slice(),
     this.player1 = {active: true , hand: []},
@@ -17,9 +17,15 @@ dragged: string;
     this.turn = 0,
     this.currentID = 1,
     this.board =
-     [0,0,0
-     ,0,0,0
-     ,0,0,0],
+    [new Card(0,0,0,0,0),
+      new Card(0,0,0,0,0),
+      new Card(0,0,0,0,0),
+      new Card(0,0,0,0,0),
+      new Card(0,0,0,0,0),
+      new Card(0,0,0,0,0),
+      new Card(0,0,0,0,0),
+      new Card(0,0,0,0,0),
+      new Card(0,0,0,0,0)],
     this.selected = 0;
     //this.suddenDeathMode = false;
   }
@@ -49,5 +55,12 @@ dealToPlayers() {
       this.player2.hand.push(this.deck[i]);
     }
   }
+}
+
+findNeighbors(location: number){
+  let neighbors = [location-1, location+1, location+3, location-3]
+
+  return neighbors;
+
 }
 }
