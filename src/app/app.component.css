@@ -1,0 +1,5 @@
+.grid-container {
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
