@@ -18,3 +18,9 @@
   position: fixed;
   left: 25%;
 }
+
+.score{
+  position:fixed;
+  top: 70%;
+  left: 50%;
+}
