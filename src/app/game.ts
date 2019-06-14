@@ -79,10 +79,24 @@ dealToPlayers() {
   flipIt(location: number){
     let neighbors = this.findNeighbors(location);
     if(neighbors.down.up > 0 && this.board[location-1].down > neighbors.down.up){
+      console.log("flipdown");
         neighbors.down.owner = this.board[location-1].owner;
-        console.log(this.board[location].image.split("_"));
         neighbors.down.image = neighbors.down.image.split("_")[0] + "_" + this.board[location-1].image.split("_")[1];
-
+    }
+    if(neighbors.up.down > 0 && this.board[location-1].up > neighbors.up.down){
+        neighbors.up.owner = this.board[location-1].owner;
+        console.log("flipup");
+        neighbors.up.image = neighbors.up.image.split("_")[0] + "_" + this.board[location-1].image.split("_")[1];
+    }
+    if(neighbors.left.right > 0 && this.board[location-1].left > neighbors.left.right){
+        neighbors.left.owner = this.board[location-1].owner;
+        console.log("flipleft");
+        neighbors.left.image = neighbors.left.image.split("_")[0] + "_" + this.board[location-1].image.split("_")[1];
+    }
+    if(neighbors.right.left > 0 && this.board[location-1].right > neighbors.right.left){
+        neighbors.right.owner = this.board[location-1].owner;
+        console.log("flipright");
+        neighbors.right.image = neighbors.right.image.split("_")[0] + "_" + this.board[location-1].image.split("_")[1];
     }
   }
 }
