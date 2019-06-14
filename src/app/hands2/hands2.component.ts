@@ -8,10 +8,11 @@ import { GAME } from '../current-game';
   styleUrls: ['./hands2.component.css']
 })
 export class Hands2Component implements OnInit {
-
+hand: {}[];
   constructor() { }
 
   ngOnInit() {
+    this.hand = GAME.player2.hand;
   }
 
 }
