@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../game';
+import { Card } from '../card';
 import { GAME } from '../current-game';
 import {CARDS} from '.././card-list';
 
@@ -9,24 +10,27 @@ import {CARDS} from '.././card-list';
   styleUrls: ['./hands2.component.css']
 })
 export class Hands2Component implements OnInit {
-hand: {image}[];
+  hand: Card[];
   constructor() { }
 
   ngOnInit() {
     this.hand = GAME.player2.hand;
+
   }
 
-  drag_handler(id: string){
-    GAME.dragged = id;
-    console.log(GAME);
+  drag_handler(id: number){
+    GAME.dragged = this.hand.filter((x) => x.id === id)[0];;
   }
 
   drag_end(){
-    if(GAME.board[GAME.selected-1] === 0 && GAME.turn % 2 === 1){
+    console.log(GAME.board[GAME.selected-1]);
+    if(GAME.board[GAME.selected-1].id === 0 && GAME.turn % 2 === 1){
       GAME.board[GAME.selected-1] = GAME.dragged;
       GAME.turn++;
-      this.hand = this.hand.filter((x) => x.image != GAME.dragged);
-    }
+      this.hand = this.hand.filter((x) => x.id != GAME.dragged.id);
+      //GAME.findNeighbors(game.selected);
+        }
+
   }
 
 }
