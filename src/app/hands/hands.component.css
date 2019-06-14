@@ -1,4 +1,4 @@
 .grid-container{
-  grid-column-start: 1;
-  grid-column-end: 5;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }

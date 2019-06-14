@@ -7,6 +7,7 @@ import { HandsComponent } from './hands/hands.component';
 import { BoardsComponent } from './boards/boards.component';
 import { ScoreComponent } from './score/score.component';
 import { OptionsComponent } from './options/options.component';
+import { Hands2Component } from './hands2/hands2.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { OptionsComponent } from './options/options.component';
     HandsComponent,
     BoardsComponent,
     ScoreComponent,
-    OptionsComponent
+    OptionsComponent,
+    Hands2Component
   ],
   imports: [
     BrowserModule
