@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5. It was a rebuild of https://github.com/j-farkas/triple-triad.git.
 
-####Author
+#### Author
 
 Jared Farkas
 
