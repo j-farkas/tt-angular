@@ -8,6 +8,7 @@ import { BoardsComponent } from './boards/boards.component';
 import { ScoreComponent } from './score/score.component';
 import { OptionsComponent } from './options/options.component';
 import { Hands2Component } from './hands2/hands2.component';
+import { GameComponent } from './game/game.component';
 
 
 @NgModule({
@@ -17,12 +18,13 @@ import { Hands2Component } from './hands2/hands2.component';
     BoardsComponent,
     ScoreComponent,
     OptionsComponent,
-    Hands2Component
+    Hands2Component,
+    GameComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [GameComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

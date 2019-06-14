@@ -1,6 +1,11 @@
 .hands1{
   float: left;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .hands2{
   float: right;
+  position: fixed;
+  top: 0;
 }
