@@ -1,6 +1,10 @@
 # TripleTriadAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5. It was a rebuild of https://github.com/j-farkas/triple-triad.git.
+
+####Author
+
+Jared Farkas
 
 ## Development server
 
@@ -9,6 +13,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Description
+
+This is a two player game in which each player tries to capture the most cards. The player with the most cards after 9 have been played wins.
 
 ## Build
 
@@ -21,6 +29,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+### License
+This software is licensed under the MIT license
 
 ## Further help
 

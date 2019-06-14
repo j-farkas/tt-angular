@@ -27,7 +27,6 @@ dragged: Card;
       new Card(0,0,0,0,0),
       new Card(0,0,0,0,0)],
     this.selected = 0;
-    //this.suddenDeathMode = false;
   }
 
   shuffle() {
@@ -72,7 +71,6 @@ dealToPlayers() {
     if(location % 3 === 0){
       neighbors.right = new Card(0,0,0,0,0);
     }
-    console.log(neighbors);
     return neighbors;
   }
 

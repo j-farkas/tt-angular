@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Game } from '../game';
 import { Card } from '../card';
 import { GAME } from '../current-game';
-import {CARDS} from '.././card-list';
 
 @Component({
   selector: 'app-hands2',
@@ -22,7 +21,6 @@ export class Hands2Component implements OnInit {
   }
 
   drag_end(){
-    console.log(GAME.board[GAME.selected-1]);
     if(GAME.board[GAME.selected-1].id === 0 && GAME.turn % 2 === 1){
       GAME.board[GAME.selected-1] = GAME.dragged;
       GAME.turn++;
