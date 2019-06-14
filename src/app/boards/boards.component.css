@@ -1,0 +1,8 @@
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 5fr);
+  background-image: url(../../assets/board.png);
+  background-size: cover;
+  height:837px;
+  width:654px;
+}
