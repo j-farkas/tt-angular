@@ -27,7 +27,5 @@ export class HandsComponent implements OnInit {
       this.hand = this.hand.filter((x) => x.id != GAME.dragged.id);
       GAME.flipIt(GAME.selected);
     }
-
   }
-
 }

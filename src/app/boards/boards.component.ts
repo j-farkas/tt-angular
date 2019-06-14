@@ -23,8 +23,7 @@ export class BoardsComponent implements OnInit {
     GAME.dealToPlayers();
   }
 
-drop_handler(location: number){
-  GAME.selected = location;
-  //this.board[location-1] = GAME.dragged;
-}
+  drop_handler(location: number){
+    GAME.selected = location;
+  }
 }
