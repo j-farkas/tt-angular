@@ -9,7 +9,7 @@ turn: number;
 currentID: number;
 board: {}[];
 selected: number;
-dragged: number;
+dragged: string;
     constructor(){
     this.deck = CARDS.slice(),
     this.player1 = {active: true , hand: []},

@@ -24,5 +24,6 @@ export class BoardsComponent implements OnInit {
 
 drop_handler(location: number){
   GAME.selected = location;
+  //this.board[location-1] = GAME.dragged;
 }
 }
