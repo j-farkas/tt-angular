@@ -22,6 +22,9 @@ This is a two player game in which each player tries to capture the most cards. 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
+## Features
+Currently this project allows the game to be played with two players and keeps track of the score. Cards change colors as indicated by the numbers.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
