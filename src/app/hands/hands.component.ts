@@ -15,7 +15,10 @@ export class HandsComponent implements OnInit {
   constructor(private gameinfoService: GameinfoService) { }
 
   ngOnInit() {
-    this.hand = this.gameinfoService.GAME.player1.hand;
+    let that = this;
+    setTimeout(function(){ that.hand = that.gameinfoService.GAME.player1.hand;
+    console.log(that.gameinfoService.GAME) }, 1000);
+
   }
 
   drag_handler(id: number){
