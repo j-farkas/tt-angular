@@ -1,11 +1,11 @@
 <div id="listboard" cdkDropListConnectedTo="list-hand1" class="grid-container">
-  <div (dragover)="drop_handler(1)" class="grid-item l1"><div *ngIf='(game.board[0].id) > 0'><img src='({{game.board[0].image}})'></div></div>
-  <div (dragover)="drop_handler(2)" class="grid-item l2"><div *ngIf='(game.board[1].id) > 0'><img src='({{game.board[1].image}})'></div></div>
-  <div (dragover)="drop_handler(3)" class="grid-item l3"><div *ngIf='(game.board[2].id) > 0'><img src='({{game.board[2].image}})'></div></div>
-  <div (dragover)="drop_handler(4)" class="grid-item l4"><div *ngIf='(game.board[3].id) > 0'><img src='({{game.board[3].image}})'></div></div>
-  <div (dragover)="drop_handler(5)" class="grid-item l5"><div *ngIf='(game.board[4].id) > 0'><img src='({{game.board[4].image}})'></div></div>
-  <div (dragover)="drop_handler(6)" class="grid-item l6"><div *ngIf='game.board[5].id > 0'><img src='({{game.board[5].image}})'></div></div>
-  <div (dragover)="drop_handler(7)" class="grid-item l7"><div *ngIf='game.board[6].id > 0'><img src='({{game.board[6].image}})'></div></div>
-  <div (dragover)="drop_handler(8)" class="grid-item l8"><div *ngIf='game.board[7].id > 0'><img src='({{game.board[7].image}})'></div></div>
-  <div (dragover)="drop_handler(9)" class="grid-item l9"><div *ngIf='game.board[8].id > 0'><img src='({{game.board[8].image}})'></div></div>
+  <div (dragover)="drop_handler(1)" class="grid-item l1"><div *ngIf='game.board[0].id != 0'><img src='{{(game.board[0].image)}}'></div></div>
+  <div (dragover)="drop_handler(2)" class="grid-item l2"><div *ngIf='game.board[1].id != 0'><img src='{{(game.board[1].image)}}'></div></div>
+  <div (dragover)="drop_handler(3)" class="grid-item l3"><div *ngIf='game.board[2].id != 0'><img src='{{(game.board[2].image)}}'></div></div>
+  <div (dragover)="drop_handler(4)" class="grid-item l4"><div *ngIf='game.board[3].id != 0'><img src='{{(game.board[3].image)}}'></div></div>
+  <div (dragover)="drop_handler(5)" class="grid-item l5"><div *ngIf='game.board[4].id != 0'><img src='{{(game.board[4].image)}}'></div></div>
+  <div (dragover)="drop_handler(6)" class="grid-item l6"><div *ngIf='game.board[5].id != 0'><img src='{{(game.board[5].image)}}'></div></div>
+  <div (dragover)="drop_handler(7)" class="grid-item l7"><div *ngIf='game.board[6].id != 0'><img src='{{(game.board[6].image)}}'></div></div>
+  <div (dragover)="drop_handler(8)" class="grid-item l8"><div *ngIf='game.board[7].id != 0'><img src='{{(game.board[7].image)}}'></div></div>
+  <div (dragover)="drop_handler(9)" class="grid-item l9"><div *ngIf='game.board[8].id != 0'><img src='{{(game.board[8].image)}}'></div></div>
 </div>

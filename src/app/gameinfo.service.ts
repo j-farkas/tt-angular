@@ -26,13 +26,33 @@ this.CARDS.subscribe(z =>     setTimeout(function(){ that.GAME.dealToPlayers()
   )
 }
 updateBoard(position, card){
-  this.board[position] = new Card(card.up, card.down, card.left,card.right,card.id);
-  this.board[position].owner = card.owner;
-  this.board[position].image = card.image;
+  console.log(this.board);
+  // this.board.$ref(`board/` + position).set({
+  //   up: card.up,
+  //   down: card.down,
+  //   left: card.left,
+  //   right: card.right,
+  //   owner: card.owner,
+  //   image: card.image,
+  //   id: card.id
+  // })
+  // this.board[position-1] = {
+  //   up: card.up,
+  //   down: card.down,
+  //   left: card.left,
+  //   right: card.right,
+  //   owner: card.owner,
+  //   image: card.image,
+  //   id: card.id
+  // }
 }
 refreshBoard(){
   this.board.subscribe(z => this.GAME.board = Object.values(z).map(function(x){
-    return new Card(x.up, x.down,x.left,x.right, x.id);
+    let card = new Card(x.up, x.down,x.left,x.right, x.id);
+    card.owner = x.owner;
+    card.image = x.image;
+    return card;
+
   }))
 }
 
