@@ -12,9 +12,9 @@ score: {red: number, blue: number};
   constructor(private gameinfoService: GameinfoService) { }
 
   ngOnInit() {
-    this.score = {red: 0, blue: 0};
-    this.score.red = this.gameinfoService.GAME.deck.filter((x) => x.owner === "red").length;
-    this.score.blue = this.gameinfoService.GAME.deck.filter((x) => x.owner === "blue").length;
+    this.score = {red: 5, blue: 5};
+    //this.score.red = this.gameinfoService.GAME.deck.filter((x) => x.owner === "red").length;
+    //this.score.blue = this.gameinfoService.GAME.deck.filter((x) => x.owner === "blue").length;
   }
 
 }

@@ -41,6 +41,7 @@ dragged: Card;
 }
 
 dealToPlayers() {
+  console.log(this);
   this.shuffle();
   for(var i = 0; i < 10; i ++){
     if(i%2 ===1){
