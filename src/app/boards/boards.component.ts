@@ -20,9 +20,9 @@ export class BoardsComponent implements OnInit {
                   ,new Card(0,0,0,0,0),new Card(0,0,0,0,0),new Card(0,0,0,0,0)
                 ,new Card(0,0,0,0,0),new Card(0,0,0,0,0),new Card(0,0,0,0,0)];
     this.game = this.gameinfoService.GAME;
-    let service = this.gameinfoService;
-    setTimeout(function(){ service.GAME.dealToPlayers()
-    console.log(service.GAME) }, 500);
+    // let service = this.gameinfoService;
+    // setTimeout(function(){ service.GAME.dealToPlayers()
+    // console.log(service.GAME) }, 500);
 
   }
 

@@ -17,6 +17,7 @@ export class Hands2Component implements OnInit {
     let that = this;
     setTimeout(function(){ that.hand = that.gameinfoService.GAME.player2.hand;
     console.log(that.hand); }, 1000);
+    this.hand = that.hand;
 
   }
 
@@ -25,6 +26,7 @@ export class Hands2Component implements OnInit {
   }
 
   drag_end(){
+    console.log(this.gameinfoService.GAME);
     if(this.gameinfoService.GAME.board[this.gameinfoService.GAME.selected-1].id === 0 && this.gameinfoService.GAME.turn % 2 === 1){
       this.gameinfoService.GAME.board[this.gameinfoService.GAME.selected-1] = this.gameinfoService.GAME.dragged;
       this.gameinfoService.GAME.turn++;

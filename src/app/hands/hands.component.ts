@@ -18,14 +18,17 @@ export class HandsComponent implements OnInit {
     let that = this;
     setTimeout(function(){ that.hand = that.gameinfoService.GAME.player1.hand;
     console.log(that.gameinfoService.GAME) }, 1000);
+    this.hand = that.hand;
 
   }
 
   drag_handler(id: number){
-    this.gameinfoService.GAME.dragged = this.hand.filter((x) => x.id === id)[0];;
+    this.gameinfoService.GAME.dragged = this.hand.filter((x) => x.id === id)[0];
+    console.log(this.hand);
   }
 
   drag_end(){
+    console.log(this.gameinfoService.GAME);
     if(this.gameinfoService.GAME.board[this.gameinfoService.GAME.selected-1].id === 0 && this.gameinfoService.GAME.turn % 2 === 0){
       this.gameinfoService.GAME.board[this.gameinfoService.GAME.selected-1] = this.gameinfoService.GAME.dragged;
       this.gameinfoService.GAME.turn++;

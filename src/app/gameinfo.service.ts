@@ -6,6 +6,8 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 @Injectable()
 export class GameinfoService {
   GAME: Game;
+  hand1: {};
+  hand2: {};
   CARDS: FirebaseListObservable<any[]>;
 
 
@@ -17,7 +19,11 @@ export class GameinfoService {
     return new Card(x.up, x.down,x.left,x.right, x.id);
   })
 )
-  console.log(this.GAME);
+let that = this;
+this.CARDS.subscribe(z =>     setTimeout(function(){ that.GAME.dealToPlayers()
+    console.log(that.GAME) }, 500)
+
+  )
 }
 
 }
