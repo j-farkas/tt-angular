@@ -6,32 +6,19 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Jared Farkas
 
-## Development server
+## Setup
+*_import gameinfo.json to a firebase database_*
+*_Apply approprate firebase credentials to an api-keys.ts_*
+*_NG serve_*
+*_Alternatively, live version is at https://tt-angular-858f9.firebaseapp.com/_*
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Description
 
-This is a two player game in which each player tries to capture the most cards. The player with the most cards after 9 have been played wins.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+This is a two player game in which each player tries to capture the most cards. The player with the most cards after the entire board has been filled wins.
 
 ## Features
 Currently this project allows the game to be played with two players and keeps track of the score. Cards change colors as indicated by the numbers.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ### License
 This software is licensed under the MIT license
