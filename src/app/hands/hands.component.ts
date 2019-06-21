@@ -36,7 +36,6 @@ export class HandsComponent implements OnInit {
       this.gameinfoService.GAME.turn++;
       this.hand = this.hand.filter((x) => x.id != this.gameinfoService.GAME.dragged.id);
       this.gameinfoService.GAME.flipIt(this.gameinfoService.GAME.selected);
-      console.log(this.gameinfoService.GAME.board);
     }
   }
 }

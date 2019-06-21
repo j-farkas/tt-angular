@@ -25,6 +25,11 @@ this.CARDS.subscribe(z =>     setTimeout(function(){ that.GAME.dealToPlayers()
 
   )
 }
+updateBoard(position, card){
+  this.board[position] = new Card(card.up, card.down, card.left,card.right,card.id);
+  this.board[position].owner = card.owner;
+  this.board[position].image = card.image;
+}
 refreshBoard(){
   this.board.subscribe(z => this.GAME.board = Object.values(z).map(function(x){
     return new Card(x.up, x.down,x.left,x.right, x.id);
