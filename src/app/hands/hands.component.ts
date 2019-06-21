@@ -29,8 +29,9 @@ export class HandsComponent implements OnInit {
 
   drag_end(){
 
-    this.gameinfoService.GAME.selected = parseInt(document.querySelector(".grid-item:hover").getAttribute(`class`)[document.querySelector(".grid-item:hover").getAttribute(`class`).length-1])
-    if(this.gameinfoService.GAME.board[this.gameinfoService.GAME.selected-1].id === 0 && this.gameinfoService.GAME.turn % 2 === 0){
+      this.gameinfoService.GAME.selected = parseInt(document.querySelector(".grid-item:hover").getAttribute(`class`)[document.querySelector(".grid-item:hover").getAttribute(`class`).length-1])
+      console.log(this.gameinfoService.GAME);
+      if(this.gameinfoService.GAME.board[this.gameinfoService.GAME.selected-1].id === 0 && this.gameinfoService.GAME.turn % 2 === 0){
       this.gameinfoService.GAME.board[this.gameinfoService.GAME.selected-1] = this.gameinfoService.GAME.dragged;
       this.gameinfoService.GAME.turn++;
       this.hand = this.hand.filter((x) => x.id != this.gameinfoService.GAME.dragged.id);

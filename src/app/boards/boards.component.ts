@@ -16,9 +16,7 @@ export class BoardsComponent implements OnInit {
   constructor(private gameinfoService: GameinfoService) { }
 
   ngOnInit() {
-    this.board = [new Card(0,0,0,0,0),new Card(0,0,0,0,0),new Card(0,0,0,0,0)
-                  ,new Card(0,0,0,0,0),new Card(0,0,0,0,0),new Card(0,0,0,0,0)
-                ,new Card(0,0,0,0,0),new Card(0,0,0,0,0),new Card(0,0,0,0,0)];
+    this.board = this.gameinfoService.GAME.board
     this.game = this.gameinfoService.GAME;
     // let service = this.gameinfoService;
     // setTimeout(function(){ service.GAME.dealToPlayers()
