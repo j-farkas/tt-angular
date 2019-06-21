@@ -22,9 +22,7 @@ export class BoardsComponent implements OnInit {
 
     this.board = GAME.board
     this.game = GAME;
-    // let service = this.gameinfoService;
-    // setTimeout(function(){ service.GAME.dealToPlayers()
-    // console.log(service.GAME) }, 500);
+
 
   }
 

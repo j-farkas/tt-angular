@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameinfoService } from '../gameinfo.service';
+import { GAME } from './../current-game';
 
 @Component({
   selector: 'app-score',
@@ -13,8 +14,8 @@ score: {red: number, blue: number};
 
   ngOnInit() {
     this.score = {red: 5, blue: 5};
-    //this.score.red = GAME.deck.filter((x) => x.owner === "red").length;
-    //this.score.blue = GAME.deck.filter((x) => x.owner === "blue").length;
+    this.score.red = GAME.deck.filter((x) => x.owner === "red").length;
+    this.score.blue = GAME.deck.filter((x) => x.owner === "blue").length;
   }
 
 }

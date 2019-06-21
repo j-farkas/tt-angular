@@ -18,7 +18,7 @@ Jared Farkas
 This is a two player game in which each player tries to capture the most cards. The player with the most cards after the entire board has been filled wins.
 
 ## Features
-Currently this project allows the game to be played with two players and keeps track of the score. Cards change colors as indicated by the numbers.
+Currently this project allows the game to be played with two players and keeps track of the score. Cards change colors as indicated by the numbers. Future work would be done on improving the appearance, adding additional optional rules, and allowing hands to be hidden.
 
 ### License
 This software is licensed under the MIT license

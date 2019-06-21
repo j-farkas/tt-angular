@@ -28,7 +28,6 @@ export class HandsComponent implements OnInit {
   }
 
   drag_end(){
-      console.log(GAME);
       if(GAME.board[GAME.selected-1].id == 0 && GAME.turn % 2 === 0){
       GAME.board[GAME.selected-1] = GAME.dragged;
       console.log(GAME.dragged);
