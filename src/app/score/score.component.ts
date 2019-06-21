@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { GAME } from '../current-game';
+import { GameinfoService } from '../gameinfo.service';
 
 @Component({
   selector: 'app-score',
   templateUrl: './score.component.html',
-  styleUrls: ['./score.component.css']
+  styleUrls: ['./score.component.css'],
+  providers: [GameinfoService]
 })
 export class ScoreComponent implements OnInit {
 score: {red: number, blue: number};
-  constructor() { }
+  constructor(private gameinfoService: GameinfoService) { }
 
   ngOnInit() {
     this.score = {red: 0, blue: 0};
-    this.score.red = GAME.deck.filter((x) => x.owner === "red").length;
-    this.score.blue = GAME.deck.filter((x) => x.owner === "blue").length;
+    this.score.red = this.gameinfoService.GAME.deck.filter((x) => x.owner === "red").length;
+    this.score.blue = this.gameinfoService.GAME.deck.filter((x) => x.owner === "blue").length;
   }
 
 }

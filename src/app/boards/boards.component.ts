@@ -1,29 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../game';
 import { Card } from '../card';
-import { GAME } from '../current-game';
-import {CARDS} from '.././card-list';
+import { GameinfoService } from '../gameinfo.service';
 
 
 @Component({
   selector: 'app-boards',
   templateUrl: './boards.component.html',
-  styleUrls: ['./boards.component.css']
+  styleUrls: ['./boards.component.css'],
+  providers: [GameinfoService]
 })
 export class BoardsComponent implements OnInit {
   board: Card[];
   game: Game;
-  constructor() { }
+  constructor(private gameinfoService: GameinfoService) { }
 
   ngOnInit() {
     this.board = [new Card(0,0,0,0,0),new Card(0,0,0,0,0),new Card(0,0,0,0,0)
                   ,new Card(0,0,0,0,0),new Card(0,0,0,0,0),new Card(0,0,0,0,0)
                 ,new Card(0,0,0,0,0),new Card(0,0,0,0,0),new Card(0,0,0,0,0)];
-    this.game = GAME;
-    GAME.dealToPlayers();
+    this.game = this.gameinfoService.GAME;
+    let service = this.gameinfoService;
+    setTimeout(function(){ service.GAME.dealToPlayers() }, 3000);
+
   }
 
   drop_handler(location: number){
-    GAME.selected = location;
+    this.gameinfoService.GAME.selected = location;
   }
 }

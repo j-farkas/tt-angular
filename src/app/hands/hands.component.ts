@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../game';
 import { Card } from '../card';
-import { GAME } from '../current-game';
+//import { GAME } from '../current-game';
 import { GameinfoService } from '../gameinfo.service';
 
 @Component({
@@ -12,22 +12,22 @@ import { GameinfoService } from '../gameinfo.service';
 })
 export class HandsComponent implements OnInit {
   hand: Card[];
-  constructor(private ameinfoService: GameinfoService) { }
+  constructor(private gameinfoService: GameinfoService) { }
 
   ngOnInit() {
-    this.hand = GAME.player1.hand;
+    this.hand = this.gameinfoService.GAME.player1.hand;
   }
 
   drag_handler(id: number){
-    GAME.dragged = this.hand.filter((x) => x.id === id)[0];;
+    this.gameinfoService.GAME.dragged = this.hand.filter((x) => x.id === id)[0];;
   }
 
   drag_end(){
-    if(GAME.board[GAME.selected-1].id === 0 && GAME.turn % 2 === 0){
-      GAME.board[GAME.selected-1] = GAME.dragged;
-      GAME.turn++;
-      this.hand = this.hand.filter((x) => x.id != GAME.dragged.id);
-      GAME.flipIt(GAME.selected);
+    if(this.gameinfoService.GAME.board[this.gameinfoService.GAME.selected-1].id === 0 && this.gameinfoService.GAME.turn % 2 === 0){
+      this.gameinfoService.GAME.board[this.gameinfoService.GAME.selected-1] = this.gameinfoService.GAME.dragged;
+      this.gameinfoService.GAME.turn++;
+      this.hand = this.hand.filter((x) => x.id != this.gameinfoService.GAME.dragged.id);
+      this.gameinfoService.GAME.flipIt(this.gameinfoService.GAME.selected);
     }
   }
 }

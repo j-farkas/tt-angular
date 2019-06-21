@@ -10,6 +10,7 @@ export class GameinfoService {
 
   constructor(private database: AngularFireDatabase) {
   this.CARDS = database.list('cards');
+  this.GAME = new Game();
   this.GAME.deck = Object.values(this.CARDS).slice();
 }
 

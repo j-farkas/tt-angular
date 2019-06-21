@@ -11,7 +11,6 @@ board: Card[];
 selected: number;
 dragged: Card;
     constructor(){
-    this.deck = CARDS.slice(),
     this.player1 = {active: true , hand: []},
     this.player2 = {active: false, hand: []},
     this.turn = 0,
