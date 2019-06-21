@@ -1,4 +1,4 @@
-import {CARDS} from './card-list';
+import { GameinfoService } from './gameinfo.service';
 import {Card} from './card';
 
 export class Game{

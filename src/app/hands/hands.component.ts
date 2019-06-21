@@ -2,15 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { Game } from '../game';
 import { Card } from '../card';
 import { GAME } from '../current-game';
+import { GameinfoService } from '../gameinfo.service';
 
 @Component({
   selector: 'app-hands',
   templateUrl: './hands.component.html',
-  styleUrls: ['./hands.component.css']
+  styleUrls: ['./hands.component.css'],
+  providers: [GameinfoService]
 })
 export class HandsComponent implements OnInit {
   hand: Card[];
-  constructor() { }
+  constructor(private ameinfoService: GameinfoService) { }
 
   ngOnInit() {
     this.hand = GAME.player1.hand;
