@@ -28,15 +28,10 @@ export class HandsComponent implements OnInit {
   }
 
   drag_end(){
-
-      console.log(document.querySelectorAll(":hover"))
-      // console.log(document.querySelector(".grid-item:hover"))
-      GAME.selected = parseInt(document.querySelector(".grid-item:hover").getAttribute(`class`)[document.querySelector(".grid-item:hover").getAttribute(`class`).split(" grid-item l")[1]]);
       console.log(GAME);
       if(GAME.board[GAME.selected-1].id == 0 && GAME.turn % 2 === 0){
       GAME.board[GAME.selected-1] = GAME.dragged;
       console.log(GAME.dragged);
-      document.getElementById("i"+(GAME.selected)).setAttribute("src",GAME.dragged.image);
       GAME.turn++;
       this.hand = this.hand.filter((x) => x.id != GAME.dragged.id);
       GAME.flipIt(GAME.selected);

@@ -17,8 +17,7 @@ export class GameinfoService {
   this.CARDS.subscribe(z => GAME.deck = Object.values(z).map(function(x){
     return new Card(x.up, x.down,x.left,x.right, x.id);
   }))
-this.CARDS.subscribe(z =>     setTimeout(function(){ GAME.dealToPlayers()
-    console.log(GAME) }, 500)
+
 
   )
 }

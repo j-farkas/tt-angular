@@ -16,7 +16,7 @@ export class Hands2Component implements OnInit {
 
   ngOnInit() {
     let that = this;
-    setTimeout(function(){ that.hand = that.gameinfoService.GAME.player2.hand;
+    setTimeout(function(){ that.hand = GAME.player2.hand;
     console.log(that.hand); }, 1000);
     this.hand = that.hand;
 
