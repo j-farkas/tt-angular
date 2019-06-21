@@ -15,7 +15,7 @@ export class GameinfoService {
   this.CARDS = database.list('cards');
   //this.GAME = new Game();
   this.CARDS.subscribe(z => GAME.deck = Object.values(z).map(function(x){
-    return new Card(x.up, x.down,x.left,x.right, x.id);
+    return new Card(parseInt(x.up), parseInt(x.down),parseInt(x.left),parseInt(x.right), x.id);
   }))
 }
 // updateBoard(position, card){
