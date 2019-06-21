@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../game';
 import { Card } from '../card';
+import { GAME } from './../current-game';
 import { GameinfoService } from '../gameinfo.service';
 
 @Component({
@@ -22,16 +23,16 @@ export class Hands2Component implements OnInit {
   }
 
   drag_handler(id: number){
-    this.gameinfoService.GAME.dragged = this.hand.filter((x) => x.id === id)[0];;
+    GAME.dragged = this.hand.filter((x) => x.id === id)[0];;
   }
 
   drag_end(){
-    console.log(this.gameinfoService.GAME);
-    if(this.gameinfoService.GAME.board[this.gameinfoService.GAME.selected-1].id === 0 && this.gameinfoService.GAME.turn % 2 === 1){
-      this.gameinfoService.GAME.board[this.gameinfoService.GAME.selected-1] = this.gameinfoService.GAME.dragged;
-      this.gameinfoService.GAME.turn++;
-      this.hand = this.hand.filter((x) => x.id != this.gameinfoService.GAME.dragged.id);
-      this.gameinfoService.GAME.flipIt(this.gameinfoService.GAME.selected);
+    console.log(GAME);
+    if(GAME.board[GAME.selected-1].id === 0 && GAME.turn % 2 === 1){
+      GAME.board[GAME.selected-1] = GAME.dragged;
+      GAME.turn++;
+      this.hand = this.hand.filter((x) => x.id != GAME.dragged.id);
+      GAME.flipIt(GAME.selected);
     }
   }
 }

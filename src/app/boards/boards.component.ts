@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../game';
 import { Card } from '../card';
+import { GAME } from './../current-game';
 import { GameinfoService } from '../gameinfo.service';
 
 
@@ -16,9 +17,9 @@ export class BoardsComponent implements OnInit {
   constructor(private gameinfoService: GameinfoService) { }
 
   ngOnInit() {
-    
-    this.board = this.gameinfoService.GAME.board
-    this.game = this.gameinfoService.GAME;
+
+    this.board = GAME.board
+    this.game = GAME;
     // let service = this.gameinfoService;
     // setTimeout(function(){ service.GAME.dealToPlayers()
     // console.log(service.GAME) }, 500);
@@ -26,6 +27,6 @@ export class BoardsComponent implements OnInit {
   }
 
   drop_handler(location: number){
-    this.gameinfoService.GAME.selected = location;
+    GAME.selected = location;
   }
 }
